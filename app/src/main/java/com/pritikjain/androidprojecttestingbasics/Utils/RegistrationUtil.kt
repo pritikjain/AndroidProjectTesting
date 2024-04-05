@@ -1,4 +1,4 @@
-package com.pritikjain.androidprojecttestingbasics
+package com.pritikjain.androidprojecttestingbasics.Utils
 
 object  RegistrationUtil {
 

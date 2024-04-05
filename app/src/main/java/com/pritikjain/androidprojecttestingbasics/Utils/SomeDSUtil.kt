@@ -1,4 +1,4 @@
-package com.pritikjain.androidprojecttestingbasics
+package com.pritikjain.androidprojecttestingbasics.Utils
 
 object SomeDSUtil {
     /**
@@ -21,7 +21,7 @@ object SomeDSUtil {
         var a  = 0L
         var b = 1L
         var c = 1L
-        (1..n-2).forEach { i ->
+        (1..<n).forEach { i ->
             c = a+b ;
             a = b
             b = c
@@ -36,8 +36,12 @@ object SomeDSUtil {
      * Test 2 : "(a * b) : return true
      * Test 3 : "((a+b": return false
      * Test 4 : "1+2+3" return false
+     * Test 5 : ")("
      */
     fun checkBraces(string: String): Boolean {
+        if(string.indexOfFirst { it == ')' } < string.indexOfFirst { it == '('}) {
+                return false
+        }
         if(string.count { it == '(' } == 0 && string.count { it == '}' } == 0)
             return false
         return string.count { it == '(' } == string.count { it == ')'}

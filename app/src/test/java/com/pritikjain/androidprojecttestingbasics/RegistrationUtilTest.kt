@@ -3,6 +3,7 @@ package com.pritikjain.androidprojecttestingbasics
 
 
 import com.google.common.truth.Truth.assertThat
+import com.pritikjain.androidprojecttestingbasics.Utils.RegistrationUtil
 import org.junit.Test
 
 class RegistrationUtilTest {

@@ -3,6 +3,7 @@ package com.pritikjain.androidprojecttestingbasics
 
 
 import com.google.common.truth.Truth.assertThat
+import com.pritikjain.androidprojecttestingbasics.Utils.SomeDSUtil
 import org.junit.Test
 
 class SomeDSUtilTest {
@@ -33,7 +34,7 @@ class SomeDSUtilTest {
     @Test
     fun `return fib(n-2) + fib(n-1) when n value is 4`(){
         val result = SomeDSUtil.fib(4)
-        assertThat(result).isEqualTo(SomeDSUtil.fib(4-2)+SomeDSUtil.fib(4-1));
+        assertThat(result).isEqualTo(SomeDSUtil.fib(4-2)+ SomeDSUtil.fib(4-1));
     }
 
     /**
@@ -43,6 +44,7 @@ class SomeDSUtilTest {
      * Test 2 : "(a * b) : return true
      * Test 3 : "((a+b": return false
      * Test 4 : "1+2+3" return false
+     * Test 5 : ")(" return false;
      */
     @Test
     fun `return false when given input has not exact count of opening and closing braces`(){
@@ -66,5 +68,16 @@ class SomeDSUtilTest {
     fun `return false when given input has no opening and closing braces at all`(){
         val result = SomeDSUtil.checkBraces("1+2+3")
         assertThat(result).isFalse()
+    }
+    @Test
+    fun `return false when given input has wrong order of braces `(){
+        val result = SomeDSUtil.checkBraces(")(")
+        assertThat(result).isFalse()
+    }
+
+    @Test
+    fun `return true when given input has correct order od braces `(){
+        val result = SomeDSUtil.checkBraces("(()())")
+        assertThat(result).isTrue()
     }
 }
